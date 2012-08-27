@@ -6,6 +6,7 @@ ZSH_MODULES=(
 plg_git
 plg_mercurial
 plg_rvm
+plg_vim
 )
 
 OPT_SET=(

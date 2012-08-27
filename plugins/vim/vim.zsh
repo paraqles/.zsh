@@ -1,0 +1,3 @@
+ZSH_PLUGIN_VIM=$ZSH_PLUGINS/vim
+
+. $ZSH_PLUGIN_VIM/aliases.zsh

@@ -1,0 +1,1 @@
+alias gvir='gvim --remote'

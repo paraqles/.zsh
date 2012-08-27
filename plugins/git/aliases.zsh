@@ -32,3 +32,6 @@ alias gdl='git pull'
 alias gdly='git pull --recurse-submodules=yes'
 alias gdln='git pull --no-recurse-submodules=yes'
 alias gfh='git fetch'
+
+# GitHub aliases
+alias gupgh='git push github'
