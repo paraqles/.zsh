@@ -40,3 +40,6 @@ flow_control
 ZSH_THEME='paraqles'
 
 . $ZSH/main.zsh
+
+EDITOR=gvim
+export $EDITOR
