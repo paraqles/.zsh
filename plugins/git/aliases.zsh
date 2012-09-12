@@ -2,6 +2,7 @@
 alias gin='git init'
 alias ginb='git init --bare'
 alias gcon='git clone'
+alias gcl='git clone'
 alias gusr='git config user.name'
 alias geml='git config user.email'
 
