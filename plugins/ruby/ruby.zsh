@@ -1,3 +1,3 @@
-$RUBY_PLUGIN_DIR=$ZSH_PLUGINS/rails
+ZSH_PLUGIN_RUBY=$ZSH_PLUGINS/ruby
 
-. $RUBY_PLUGIN_DIR/aliases.zsh
+. $ZSH_PLUGIN_RUBY/aliases.zsh
