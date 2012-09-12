@@ -1,0 +1,3 @@
+$RUBY_PLUGIN_DIR=$ZSH_PLUGINS/rails
+
+. $RUBY_PLUGIN_DIR/aliases.zsh
