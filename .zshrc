@@ -7,6 +7,8 @@ plg_git
 plg_mercurial
 plg_rvm
 plg_vim
+plg_ruby
+plg_rails
 )
 
 OPT_SET=(
