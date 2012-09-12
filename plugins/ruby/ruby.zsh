@@ -1,3 +1,0 @@
-ZSH_PLUGIN_RUBY=$ZSH_PLUGINS/ruby
-
-. $ZSH_PLUGIN_RUBY/aliases.zsh
