@@ -10,6 +10,10 @@
   path = plugins/linux
   url = https://github.com/paraqles/zsh-plugin-linux.git
 
+[submodule "plugin/mac"]
+  path = plugins/mac
+  url = https://github.com/paraqles/zsh-plugin-mac.git
+
 [submodule "plugin/mercurial"]
   path = plugins/mercurial
   url = https://github.com/paraqles/zsh-plugin-mercurial.git
