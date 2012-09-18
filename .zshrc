@@ -2,14 +2,20 @@ source $HOME/.profile
 
 ZSH=$HOME/.zsh
 
-ZSH_MODULES=(
+ZSH_PLUGINS=(
 plg_git
 plg_mercurial
+plg_rails
+plg_ruby
 plg_rvm
 plg_vim
-plg_ruby
-plg_rails
 )
+
+if [[ `uname` == Linux ]]; then
+  ZSH_PLUGINS[(${#ZSH_PLUGINS})+1]=plg_linux
+elif [[ `uname` == *BSD ]]; then
+  ZSH_PLUGINS[(${#ZSH_PLUGINS})+1]=plg_bsd
+fi
 
 OPT_SET=(
 always_to_end
