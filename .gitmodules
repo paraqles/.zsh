@@ -1,6 +1,14 @@
+[submodule "plugin/bsd"]
+  path = plugins/bsd
+  url = https://github.com/paraqles/zsh-plugin-bsd.git
+
 [submodule "plugin/git"]
   path = plugins/git
   url = https://github.com/paraqles/zsh-plugin-git.git
+
+[submodule "plugin/linux"]
+  path = plugins/linux
+  url = https://github.com/paraqles/zsh-plugin-linux.git
 
 [submodule "plugin/mercurial"]
   path = plugins/mercurial
@@ -17,6 +25,10 @@
 [submodule "plugin/rvm"]
   path = plugins/rvm
   url = https://github.com/paraqles/zsh-plugin-rvm.git
+
+[submodule "plugin/sunos"]
+  path = plugins/sunos
+  url = https://github.com/paraqles/zsh-plugin-sunos.git
 
 [submodule "plugin/vim"]
   path = plugins/vim
