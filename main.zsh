@@ -1,29 +1,22 @@
-ZSH=$HOME/.zsh
-ZSH_LIBS=$ZSH/libs
-ZSH_PLUGINS=$ZSH/plugins
+ZSH_DIR=$HOME/.zsh
+ZSH_LIBS_DIR=$ZSH/libs
+ZSH_PLUGINS_DIR=$ZSH/plugins
 
-ZSH_BASE_MODULES=(
+ZSH_MODULES=(
 lib_utils
+lib_hash
 lib_hook
-lib_prompt
 lib_options
+lib_prompt
 lib_history
 lib_keybinding
 lib_theme
 lib_completion
 lib_alias
-lib_ls
+lib_plugins
 )
-for zsh_base_mod in $ZSH_BASE_MODULES; do
-  . $ZSH_LIBS/$zsh_base_mod.zsh
-done
 
 for zsh_mod in $ZSH_MODULES; do
-  module=""
-  if [[ $zsh_mod = lib_* ]]; then
-    module=$ZSH_LIBS/$zsh_mod.zsh
-  elif [[ $zsh_mod = plg_* ]]; then
-    module=$ZSH_PLUGINS/${zsh_mod[5,-1]}/${zsh_mod[5,-1]}.zsh
-  fi
-  . $module
+  . $ZSH_LIBS_DIR/$zsh_mod.zsh
 done
+
