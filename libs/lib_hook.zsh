@@ -1,14 +1,14 @@
 require lib_hash.zsh
 
-typeset -A hooks
+typeset -A zsh_hooks
 
 hook_add() {
   if [ $# -le 2 ]; then
     return -1
   fi
 
-  if [ -z $hooks[$1] ]; then
-    typeset -A $hooks[$1]
+  if [ -z $zsh_hooks[$1] ]; then
+    typeset -A $zsh_hooks[$1]
   fi
   return 1
 }
@@ -21,10 +21,10 @@ hook_register() {
   hook=$1
   callback=$2
 
-  if [[ ! -z hooks[$hook] ]]; then
-    typeset -A hooks[$hook]
+  if [[ ! -z zsh_hooks[$hook] ]]; then
+    typeset -A zsh_hooks[$hook]
   else
-    hooks[$hook][${#hooks[$hook]}+1] = callback
+    zsh_hooks[$hook][${#zsh_hooks[$hook]}+1] = callback
   fi
 }
 
