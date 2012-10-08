@@ -8,6 +8,7 @@ plg_mercurial
 plg_rails
 plg_ruby
 plg_rvm
+plg_ssh
 plg_vim
 )
 
