@@ -12,7 +12,8 @@ lib_history
 lib_keybinding
 lib_theme
 lib_completion
-lib_alias
+lib_functions
+lib_aliases
 lib_plugins
 )
 
