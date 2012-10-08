@@ -31,8 +31,8 @@
   url = https://github.com/paraqles/zsh-plugin-rvm.git
 
 [submodule "plugins/ssh"]
-	path = plugins/ssh
-	url = git://github.com/paraqles/zsh-plugin-ssh.git
+  path = plugins/ssh
+  url = git://github.com/paraqles/zsh-plugin-ssh.git
 
 [submodule "plugins/sunos"]
   path = plugins/sunos
