@@ -1,40 +1,44 @@
-[submodule "plugin/bsd"]
+[submodule "plugins/bsd"]
   path = plugins/bsd
   url = https://github.com/paraqles/zsh-plugin-bsd.git
 
-[submodule "plugin/git"]
+[submodule "plugins/git"]
   path = plugins/git
   url = https://github.com/paraqles/zsh-plugin-git.git
 
-[submodule "plugin/linux"]
+[submodule "plugins/linux"]
   path = plugins/linux
   url = https://github.com/paraqles/zsh-plugin-linux.git
 
-[submodule "plugin/mac"]
+[submodule "plugins/mac"]
   path = plugins/mac
   url = https://github.com/paraqles/zsh-plugin-mac.git
 
-[submodule "plugin/mercurial"]
+[submodule "plugins/mercurial"]
   path = plugins/mercurial
   url = https://github.com/paraqles/zsh-plugin-mercurial.git
 
-[submodule "plugin/rails"]
+[submodule "plugins/rails"]
   path = plugins/rails
   url = https://github.com/paraqles/zsh-plugin-rails.git
 
-[submodule "plugin/ruby"]
+[submodule "plugins/ruby"]
   path = plugins/ruby
   url = https://github.com/paraqles/zsh-plugin-ruby.git
 
-[submodule "plugin/rvm"]
+[submodule "plugins/rvm"]
   path = plugins/rvm
   url = https://github.com/paraqles/zsh-plugin-rvm.git
 
-[submodule "plugin/sunos"]
+[submodule "plugins/ssh"]
+	path = plugins/ssh
+	url = git://github.com/paraqles/zsh-plugin-ssh.git
+
+[submodule "plugins/sunos"]
   path = plugins/sunos
   url = https://github.com/paraqles/zsh-plugin-sunos.git
 
-[submodule "plugin/vim"]
+[submodule "plugins/vim"]
   path = plugins/vim
   url = https://github.com/paraqles/zsh-plugin-vim.git
 
