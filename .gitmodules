@@ -1,34 +1,34 @@
 [submodule "plugins/bsd"]
   path = plugins/bsd
-  url = git@github_paraqles:paraqles/zsh-plugin-bsd.git
+  url = git@github.com:paraqles/zsh-plugin-bsd.git
 
 [submodule "plugins/git"]
   path = plugins/git
-  url = git@github_paraqles:paraqles/zsh-plugin-git.git
+  url = git@github.com:paraqles/zsh-plugin-git.git
 
 [submodule "plugins/linux"]
   path = plugins/linux
-  url = git@github_paraqles:paraqles/zsh-plugin-linux.git
+  url = git@github.com:paraqles/zsh-plugin-linux.git
 
 [submodule "plugins/mac"]
   path = plugins/mac
-  url = git@github_paraqles:paraqles/zsh-plugin-mac.git
+  url = git@github.com:paraqles/zsh-plugin-mac.git
 
 [submodule "plugins/mercurial"]
   path = plugins/mercurial
-  url = git@github_paraqles:paraqles/zsh-plugin-mercurial.git
+  url = git@github.com:paraqles/zsh-plugin-mercurial.git
 
 [submodule "plugins/rails"]
   path = plugins/rails
-  url = git@github_paraqles:paraqles/zsh-plugin-rails.git
+  url = git@github.com:paraqles/zsh-plugin-rails.git
 
 [submodule "plugins/ruby"]
   path = plugins/ruby
-  url = git@github_paraqles:paraqles/zsh-plugin-ruby.git
+  url = git@github.com:paraqles/zsh-plugin-ruby.git
 
 [submodule "plugins/rvm"]
   path = plugins/rvm
-  url = git@github_paraqles:paraqles/zsh-plugin-rvm.git
+  url = git@github.com:paraqles/zsh-plugin-rvm.git
 
 [submodule "plugins/ssh"]
   path = plugins/ssh
@@ -36,9 +36,9 @@
 
 [submodule "plugins/sunos"]
   path = plugins/sunos
-  url = git@github_paraqles:paraqles/zsh-plugin-sunos.git
+  url = git@github.com:paraqles/zsh-plugin-sunos.git
 
 [submodule "plugins/vim"]
   path = plugins/vim
-  url = git@github_paraqles:paraqles/zsh-plugin-vim.git
+  url = git@github.com:paraqles/zsh-plugin-vim.git
 
