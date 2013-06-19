@@ -7,3 +7,10 @@ for zsh_plg in $ZSH_PLUGINS; do
   fi
   source $plugin
 done
+
+zsh_update_plugins() {
+  old_pwd=`pwd`
+  cd $ZSH_DIR
+  git submodule foreach "git checkout master; git pull"
+  cd $old_pwd
+}

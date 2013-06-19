@@ -24,6 +24,11 @@ and much more.
 
 - Setting of options through an array
 
-- Convienance alias for config reload
+- Convienance alias for config reload `zshrc`
 
 - Several plugins with functions and aliases.
+
+### Commands
+
+`zshrc` -> Reload zsh config
+`zsh_update_plugins` -> Update all plugins
