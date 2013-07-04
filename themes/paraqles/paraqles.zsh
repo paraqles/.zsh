@@ -55,6 +55,13 @@ setprompt () {
   PR_LRCORNER=${altchar[j]:--}
   PR_URCORNER=${altchar[k]:--}
 
+  HBAR="$PR_SHIFT_IN$PR_HBAR$PR_SHIFT_OUT"
+  ULCORNER="$PR_SHIFT_IN$PR_ULCORNER$PR_SHIFT_OUT"
+  LLCORNER="$PR_SHIFT_IN$PR_LLCORNER$PR_SHIFT_OUT"
+  LRCORNER="$PR_SHIFT_IN$PR_LRCORNER$PR_SHIFT_OUT"
+  URCORNER="$PR_SHIFT_IN$PR_URCORNER$PR_SHIFT_OUT"
+  FILLBAR='$PR_SHIFT_IN${(e)PR_FILLBAR}$PR_SHIFT_OUT'
+
   # Decide if we need to set titlebar text.
   case $TERM in
     xterm*)
@@ -74,27 +81,55 @@ setprompt () {
     PR_STITLE=''
   fi
 
+  prompt_parts=()
+  prompt_parts[1]=
+  prompt_parts[2]='$PR_SET_CHARSET$PR_STITLE${(e)PR_TITLEBAR}'
+  prompt_parts[3]='$PR_CYAN$ULCORNER'
+
+  prompt_parts[4]='$PR_BLUE$HBAR('
+    prompt_parts[5]='$PR_MAGENTA%$PR_PWDLEN<...<%~%<<'
+  prompt_parts[6]='$PR_BLUE)$HBAR'
+
+  prompt_parts[7]="$PR_CYAN$HBAR$FILLBAR"
+
+  prompt_parts[8]='$PR_BLUE$HBAR('
+    prompt_parts[9]='$PR_GREEN%(!.%SROOT%s.%n)$PR_GREEN@%m:%l'
+  prompt_parts[10]='$PR_BLUE)$HBAR'
+
+  prompt_parts[11]='$PR_CYAN$URCORNER
+$PR_CYAN$LLCORNER'
+
+  prompt_parts[12]='$PR_BLUE$HBAR('
+    prompt_parts[13]='%(?..$PR_LIGHT_RED%?$PR_BLUE:)'
+    prompt_parts[14]='${(e)PR_APM}$PR_YELLOW%D{%H:%M}'
+    prompt_parts[15]='$PR_LIGHT_BLUE:%(!.$PR_RED.$PR_WHITE)%#'
+  prompt_parts[16]='$PR_BLUE)$HBAR'
+
+  prompt_parts[17]='$PR_CYAN$HBAR$PR_NO_COLOUR '
+
+  rprompt_parts=()
+  rprompt_parts[1]=' $PR_CYAN$HBAR'
+  rprompt_parts[2]='$PR_BLUE$HBAR('
+    rprompt_parts[3]='$PR_YELLOW%D{%a,%b%d}'
+  rprompt_parts[4]='$PR_BLUE)$HBAR'
+  rprompt_parts[5]='$PR_CYAN$LRCORNER$PR_NO_COLOUR'
+
+  ps2_parts=()
+  ps2_parts[1]='$PR_CYAN$HBAR'
+    ps2_parts[2]='$PR_BLUE$HBAR('
+    ps2_parts[3]='$PR_LIGHT_GREEN%_'
+  ps2_parts[4]='$PR_BLUE)$HBAR'
+  ps2_parts[5]='$PR_CYAN$HBAR$PR_NO_COLOUR '
+
   # Finally, the prompt.
-  PROMPT='$PR_SET_CHARSET$PR_STITLE${(e)PR_TITLEBAR}\
-$PR_CYAN$PR_SHIFT_IN$PR_ULCORNER$PR_BLUE$PR_HBAR$PR_SHIFT_OUT(\
-$PR_GREEN%(!.%SROOT%s.%n)$PR_GREEN@%m:%l\
-$PR_BLUE)$PR_SHIFT_IN$PR_HBAR$PR_CYAN$PR_HBAR${(e)PR_FILLBAR}$PR_BLUE$PR_HBAR$PR_SHIFT_OUT(\
-$PR_MAGENTA%$PR_PWDLEN<...<%~%<<\
-$PR_BLUE)$PR_SHIFT_IN$PR_HBAR$PR_CYAN$PR_URCORNER$PR_SHIFT_OUT
-$PR_CYAN$PR_SHIFT_IN$PR_LLCORNER$PR_BLUE$PR_HBAR$PR_SHIFT_OUT(\
-%(?..$PR_LIGHT_RED%?$PR_BLUE:)\
-${(e)PR_APM}$PR_YELLOW%D{%H:%M}\
-$PR_LIGHT_BLUE:%(!.$PR_RED.$PR_WHITE)%#$PR_BLUE)$PR_SHIFT_IN$PR_HBAR$PR_SHIFT_OUT\
-$PR_CYAN$PR_SHIFT_IN$PR_HBAR$PR_SHIFT_OUT\
-$PR_NO_COLOUR '
+  oIFS=$IFS
+  IFS=''
 
-  RPROMPT=' $PR_CYAN$PR_SHIFT_IN$PR_HBAR$PR_BLUE$PR_HBAR$PR_SHIFT_OUT\
-($PR_YELLOW%D{%a,%b%d}$PR_BLUE)$PR_SHIFT_IN$PR_HBAR$PR_CYAN$PR_LRCORNER$PR_SHIFT_OUT$PR_NO_COLOUR'
+  PROMPT=$prompt_parts
+  RPROMPT=$rprompt_parts
+  PS2=$ps2_parts
 
-  PS2='$PR_CYAN$PR_SHIFT_IN$PR_HBAR$PR_SHIFT_OUT\
-$PR_BLUE$PR_SHIFT_IN$PR_HBAR$PR_SHIFT_OUT(\
-$PR_LIGHT_GREEN%_$PR_BLUE)$PR_SHIFT_IN$PR_HBAR$PR_SHIFT_OUT\
-$PR_CYAN$PR_SHIFT_IN$PR_HBAR$PR_SHIFT_OUT$PR_NO_COLOUR '
+  IFS=$oIFS
 }
 
 precmd
