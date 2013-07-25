@@ -42,3 +42,6 @@
   path = plugins/vim
   url = https://github.com/paraqles/zsh-plugin-vim.git
 
+[submodule "plugins/zfs"]
+  path = plugins/zfs
+  url = https://github.com/paraqles/zsh-plugin-zfs.git
