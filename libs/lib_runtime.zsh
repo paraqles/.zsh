@@ -1,4 +1,4 @@
-ZSH_RUNTIME_DIR=$ZSH_DIR/runtimes
+ZSH_RUNTIME_DIR=$ZDOTDIR/runtimes
 
 for runtime in `ls $ZSH_RUNTIME_DIR/*`; do
   if [[ -d $runtime ]]; then

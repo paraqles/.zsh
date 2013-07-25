@@ -1,5 +1,5 @@
-ZSH_THEMES=$ZSH/themes
+ZSH_THEMES=$ZDOTDIR/themes
 
 if [[ $ZSH_THEME != "" ]]; then
-  . $ZSH_THEMES/$ZSH_THEME/$ZSH_THEME.zsh
+  source $ZSH_THEMES/$ZSH_THEME/$ZSH_THEME.zsh
 fi

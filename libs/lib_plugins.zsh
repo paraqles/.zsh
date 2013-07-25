@@ -10,7 +10,7 @@ done
 
 zsh_update_plugins() {
   old_pwd=`pwd`
-  cd $ZSH_DIR
+  cd $ZDOTDIR
   git submodule foreach "git checkout master; git pull"
   cd $old_pwd
 }
