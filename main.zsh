@@ -1,3 +1,19 @@
+if [ -r /etc/profile ]; then
+  source /etc/profile
+fi
+
+if [ -r $HOME/.zprofile ]; then
+  source $HOME/.zprofile
+fi
+
+if [ -r $ZDOTDIR/zprofile ]; then
+  source $ZDOTDIR/zprofile
+fi
+
+if [ -r $HOME/.profile ]; then
+  source $HOME/.profile
+fi
+
 ZSH_LIBS_DIR=$ZDOTDIR/libs
 ZSH_PLUGINS_DIR=$ZDOTDIR/plugins
 
@@ -64,18 +80,3 @@ for zsh_mod in $ZSH_MODULES; do
   source $ZSH_LIBS_DIR/$zsh_mod.zsh
 done
 
-if [ -r /etc/profile ]; then
-  source /etc/profile
-fi
-
-if [ -r $HOME/.zprofile ]; then
-  source $HOME/.zprofile
-fi
-
-if [ -r $ZDOTDIR/zprofile ]; then
-  source $ZDOTDIR/zprofile
-fi
-
-if [ -r $HOME/.profile ]; then
-  source $HOME/.profile
-fi
