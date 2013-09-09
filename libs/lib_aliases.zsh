@@ -1,5 +1,5 @@
-alias zshrc='source $ZDOTDIR/main.zsh'
+alias zshrc='source $ZDIR/main.zsh'
 
-for al in `ls $ZDOTDIR/aliases/aliases.*.zsh`; do
+for al in `ls $ZDIR/aliases/aliases.*.zsh`; do
   source $al
 done

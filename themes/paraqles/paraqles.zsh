@@ -93,19 +93,24 @@ setprompt () {
   prompt_parts[7]="$PR_CYAN$HBAR$FILLBAR"
 
   prompt_parts[8]='$PR_BLUE$HBAR('
-    prompt_parts[9]='$PR_GREEN%(!.%SROOT%s.%n)$PR_GREEN@%m:%l'
-  prompt_parts[10]='$PR_BLUE)$HBAR'
+    prompt_parts[9]='$PR_GREEN%(!.%SROOT%s.%n)$PR_GREEN@'
+    if [ "$SSH_CONNECTION" ]; then
+      prompt_parts[10]='$PR_RED%m$PR_GREEN:%l'
+    else
+      prompt_parts[10]='$PR_YELLOW%m$PR_GREEN:%l'
+    fi
+  prompt_parts[11]='$PR_BLUE)$HBAR'
 
-  prompt_parts[11]='$PR_CYAN$URCORNER
+  prompt_parts[12]='$PR_CYAN$URCORNER
 $PR_CYAN$LLCORNER'
 
-  prompt_parts[12]='$PR_BLUE$HBAR('
-    prompt_parts[13]='%(?..$PR_LIGHT_RED%?$PR_BLUE:)'
-    prompt_parts[14]='${(e)PR_APM}$PR_YELLOW%D{%H:%M}'
-    prompt_parts[15]='$PR_LIGHT_BLUE:%(!.$PR_RED.$PR_WHITE)%#'
-  prompt_parts[16]='$PR_BLUE)$HBAR'
+  prompt_parts[13]='$PR_BLUE$HBAR('
+    prompt_parts[14]='%(?..$PR_LIGHT_RED%?$PR_BLUE:)'
+    prompt_parts[15]='${(e)PR_APM}$PR_YELLOW%D{%H:%M}'
+    prompt_parts[16]='$PR_LIGHT_BLUE:%(!.$PR_RED.$PR_WHITE)%#'
+  prompt_parts[17]='$PR_BLUE)$HBAR'
 
-  prompt_parts[17]='$PR_CYAN$HBAR$PR_NO_COLOUR '
+  prompt_parts[18]='$PR_CYAN$HBAR$PR_NO_COLOUR '
 
   rprompt_parts=()
   rprompt_parts[1]=' $PR_CYAN$HBAR'

@@ -1,3 +1,3 @@
-for f in `ls $ZDOTDIR/functions/func.*.zsh`; do
+for f in `ls $ZDIR/functions/func.*.zsh`; do
   source $f
 done

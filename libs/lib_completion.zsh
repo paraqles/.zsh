@@ -3,7 +3,7 @@ zmodload -i zsh/complist
 
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path $ZDOTDIR/cache
+zstyle ':completion:*' cache-path $ZDIR/cache
 
 machter_lu="m:{[:lower:]}={[:upper:]}"
 matcher_ul="m:{[:upper:}}={[:lower:]}"
@@ -25,4 +25,4 @@ matcher_approximate_param="$matcher_lu $matcher_ul $matcher_luul $matcher_ullu $
 zstyle ':completion:*:descriptions' format 'Candidates for %B%d%B:'
 zstyle ':completion:*' list-seperator '#'
 
-zstyle :compinstall filename "$ZDOTDIR/.zshrc"
+zstyle :compinstall filename "$ZDIR/.zshrc"
