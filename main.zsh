@@ -1,25 +1,21 @@
-if [ -r /etc/profile ]; then
-  source /etc/profile
-fi
-
 if [ -r $HOME/.zprofile ]; then
   source $HOME/.zprofile
 fi
 
-if [ -r $ZDOTDIR/zprofile ]; then
-  source $ZDOTDIR/zprofile
+if [ -r $ZDIR/zprofile ]; then
+  source $ZDIR/zprofile
 fi
 
 if [ -r $HOME/.profile ]; then
   source $HOME/.profile
 fi
 
-ZSH_LIBS_DIR=$ZDOTDIR/libs
-ZSH_PLUGINS_DIR=$ZDOTDIR/plugins
+ZSH_LIBS_DIR=$ZDIR/libs
+ZSH_PLUGINS_DIR=$ZDIR/plugins
 
 # Load Host specific config
-if [[ -r "$ZDOTDIR/hosts/$HOST.zsh" ]]; then
-  source $ZDOTDIR/hosts/$HOST.zsh
+if [[ -r "$ZDIR/hosts/$HOST.zsh" ]]; then
+  source $ZDIR/hosts/$HOST.zsh
 else
   ZSH_PLUGINS=(
     plg_ssh
