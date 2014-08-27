@@ -1,3 +1,7 @@
+[submodule "plugins/arch"]
+  path = plugins/arch
+  url = https://github.com/paraqles/zsh-plugin-arch.git
+
 [submodule "plugins/bsd"]
   path = plugins/bsd
   url = https://github.com/paraqles/zsh-plugin-bsd.git
