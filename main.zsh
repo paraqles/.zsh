@@ -47,6 +47,7 @@ else
     mark_dirs
     nomatch
     notify
+    unicode
   )
 
   OPT_USET=(

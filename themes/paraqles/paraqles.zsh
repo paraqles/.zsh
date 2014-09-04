@@ -43,17 +43,27 @@ setprompt () {
   done
   PR_NO_COLOUR="%{$terminfo[sgr0]%}"
 
-  # See if we can use extended characters to look nicer.
-  typeset -A altchar
-  set -A altchar ${(s..)terminfo[acsc]}
-  PR_SET_CHARSET="%{$terminfo[enacs]%}"
-  PR_SHIFT_IN="%{$terminfo[smacs]%}"
-  PR_SHIFT_OUT="%{$terminfo[rmacs]%}"
-  PR_HBAR=${altchar[q]:--}
-  PR_ULCORNER=${altchar[l]:--}
-  PR_LLCORNER=${altchar[m]:--}
-  PR_LRCORNER=${altchar[j]:--}
-  PR_URCORNER=${altchar[k]:--}
+  if [[ $ZSH_ENCODING =~ "utf-8" ]]; then
+    PR_SHIFT_IN=""
+    PR_SHIFT_OUT=""
+    PR_HBAR="─"
+    PR_ULCORNER="┌"
+    PR_LLCORNER="└"
+    PR_URCORNER="┐"
+    PR_LRCORNER="┘"
+  else
+    # See if we can use extended characters to look nicer.
+    typeset -A altchar
+    set -A altchar ${(s..)terminfo[acsc]}
+    PR_SET_CHARSET="%{$terminfo[enacs]%}"
+    PR_SHIFT_IN="%{$terminfo[smacs]%}"
+    PR_SHIFT_OUT="%{$terminfo[rmacs]%}"
+    PR_HBAR=${altchar[q]:--}
+    PR_ULCORNER=${altchar[l]:--}
+    PR_LLCORNER=${altchar[m]:--}
+    PR_LRCORNER=${altchar[j]:--}
+    PR_URCORNER=${altchar[k]:--}
+  fi
 
   HBAR="$PR_SHIFT_IN$PR_HBAR$PR_SHIFT_OUT"
   ULCORNER="$PR_SHIFT_IN$PR_ULCORNER$PR_SHIFT_OUT"
