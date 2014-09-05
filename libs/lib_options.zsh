@@ -1,6 +1,6 @@
 
 for opt in $OPT_SET; do
-  if [[ $opt =~ "/UNICODE/i" ]]; then
+  if [[ ${(U)opt} =~ "UNICODE" ]]; then
     ZSH_ENCODING="utf-8"
   else
     setopt ${(U)opt}
