@@ -14,3 +14,4 @@ zsh_update_plugins() {
   git submodule foreach "git checkout master; git pull"
   cd $old_pwd
 }
+
