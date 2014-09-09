@@ -1,6 +1,7 @@
 ZSH_PLUGINS=(
   plg_ssh
   plg_vim
+  plg_zsh-history-substring-search
 )
 
 OPT_SET=(
