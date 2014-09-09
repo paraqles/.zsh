@@ -1,3 +1,7 @@
+[[ -r /etc/profile ]] && source /etc/profile
+
+[[ -r $HOME/.profile ]] && source $HOME/.profile
+
 ZSH_LIBS_DIR=$ZDIR/libs
 ZSH_PLUGINS_DIR=$ZDIR/plugins
 
@@ -28,10 +32,13 @@ if [[ -z "$HOST" ]]; then
   export HOST=$(hostname)
 fi
 
+# Check for a configuration for the current hostname.
 if [[ ! -r "$ZDIR/hosts/$HOST.zsh" ]]; then
+  # If not copy the template for to a new config for the current hostname.
   cp $ZDIR/template_host.zsh $ZDIR/hosts/$HOST.zsh
 fi
 
+# Apply host configuration
 source $ZDIR/hosts/$HOST.zsh
 
 if [[ `uname` == Linux ]]; then
@@ -43,7 +50,7 @@ elif [[ `uname` == Darwin ]]; then
 fi
 
 for zsh_mod in $ZSH_MODULES; do
-  if [[ $zsh_mod =~ '^zsh/' ]]; then
+  if [[ "$zsh_mod" =~ '^zsh/' ]]; then
     zmodload $zsh_mod
   else
     autoload -U $zsh_mod
@@ -53,16 +60,4 @@ done
 for zshrc_mod in $ZSHRC_MODULES; do
   source $ZSH_LIBS_DIR/$zshrc_mod.zsh
 done
-
-if [ -r $HOME/.zprofile ]; then
-  source $HOME/.zprofile
-fi
-
-if [ -r $ZDIR/zprofile ]; then
-  source $ZDIR/zprofile
-fi
-
-if [ -r $HOME/.profile ]; then
-  source $HOME/.profile
-fi
 
