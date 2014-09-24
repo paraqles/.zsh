@@ -5,6 +5,17 @@
 ZSH_LIBS_DIR=$ZDIR/libs
 ZSH_PLUGINS_DIR=$ZDIR/plugins
 
+ZSH_PLUGINS=(
+  plg_ssh
+  plg_vim
+)
+
+OPT_SET=(
+  nohashdirs
+)
+
+OPT_USET=(
+)
 
 ZSHRC_MODULES=(
   lib_utils

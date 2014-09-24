@@ -1,4 +1,4 @@
 cache/
 .zcompdump
-hosts/*.zsh
 hosts/
+hosts/*.zsh
