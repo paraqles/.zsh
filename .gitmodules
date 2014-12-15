@@ -53,3 +53,6 @@
 [submodule "plugins/zfs"]
   path = plugins/zfs
   url = https://github.com/paraqles/zsh-plugin-zfs.git
+[submodule "plugins/zsh-syntax-highlighting"]
+	path = plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git

@@ -8,10 +8,35 @@ ZSH_PLUGINS_DIR=$ZDIR/plugins
 ZSH_PLUGINS=(
   plg_ssh
   plg_vim
+  plg_zsh-syntax-highlighting
+  plg_zsh-history-substring-search
 )
 
 OPT_SET=(
   nohashdirs
+  always_to_end
+  appendhistory
+  auto_cd
+  auto_menu
+  auto_param_slash
+  auto_remove_slash
+  clobber
+  complete_in_word
+  complete_aliases
+  extended_glob
+  glob
+  glob_complete
+  glob_dots
+  hist_verify
+  hist_ignore_dups
+  hist_save_no_dups
+  hist_verify
+  list_packed
+  list_types
+  mark_dirs
+  multibyte
+  nomatch
+  notify
 )
 
 OPT_USET=(
