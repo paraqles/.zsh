@@ -20,7 +20,7 @@ matcher_match_param="$matcher_lu $matcher_ul $matcher_luul $matcher_ullu $matche
 matcher_correct_param="$matcher_lu $matcher_ul $matcher_luul $matcher_ullu $matcher_wwrap"
 matcher_approximate_param="$matcher_lu $matcher_ul $matcher_luul $matcher_ullu $matcher_wwrap"
 
-#zstyle ':completion:*' matcher-list "$matcher_list_param $matcher_olist_param $matcher_expand_param $matcher_complete_param $matcher_ignored_param $matcher_match_param $matcher_correct_param $matcher_approximate_param"
+zstyle ':completion:*' matcher-list "$matcher_list_param $matcher_olist_param $matcher_expand_param $matcher_complete_param $matcher_ignored_param $matcher_match_param $matcher_correct_param $matcher_approximate_param"
 
 zstyle ':completion:*:descriptions' format 'Candidates for %B%d%B:'
 zstyle ':completion:*' list-seperator '#'

@@ -8,12 +8,10 @@ ZSH_PLUGINS_DIR=$ZDIR/plugins
 ZSH_PLUGINS=(
   plg_ssh
   plg_vim
-  plg_zsh-syntax-highlighting
-  plg_zsh-history-substring-search
 )
 
 OPT_SET=(
-  nohashdirs
+  #nohashdirs
   always_to_end
   appendhistory
   auto_cd
@@ -68,6 +66,11 @@ if [[ -z "$HOST" ]]; then
   export HOST=$(hostname)
 fi
 
+# Check if $HOST or hostname has domain part.
+if [[ "$HOST" =~ "\." ]]; then
+  export HOST=${HOST%%.*}
+fi
+
 # Check for a configuration for the current hostname.
 if [[ ! -r "$ZDIR/hosts/$HOST.zsh" ]]; then
   # If not copy the template for to a new config for the current hostname.
@@ -84,6 +87,11 @@ elif [[ `uname` == *BSD ]]; then
 elif [[ `uname` == Darwin ]]; then
   ZSH_PLUGINS+=( plg_mac )
 fi
+
+ZSH_PLUGINS+=(
+  plg_zsh-syntax-highlighting
+  plg_zsh-history-substring-search
+)
 
 for zsh_mod in $ZSH_MODULES; do
   if [[ "$zsh_mod" =~ '^zsh/' ]]; then
