@@ -2,24 +2,23 @@ bindkey -v
 
 typeset -A key
 
-key[home]=${terminfo[khome]}
-key[end]=${terminfo[kend]}
+source $ZSH_OS_DIR/keymapping.zsh
 
-key[insert]=${terminfo[kich1]}
-key[delete]=${terminfo[kdch1]}
-key[backspace]=${terminfo[kbs]}
+bindkey "${key[up]}"              up-line-or-search
+bindkey "${key[down]}"            down-line-or-search
 
-key[up]=${terminfo[kcuu1]}
-key[down]=${terminfo[kcud1]}
-key[left]=${terminfo[kcub1]}
-key[right]=${terminfo[kcuf1]}
+bindkey "${key[up]}"              up-line-or-history
+bindkey "${key[down]}"            down-line-or-history
 
-key[page-up]=${terminfo[kpp]}
-key[page-down]=${terminfo[knp]}
 
-if [[ $TERM =~ ".*xterm.*" ]]; then
-  key[ctrl-left]='^[[1;5D'
-  key[ctrl-right]='^[[1;5C'
-  key[ctrl-backspace]=''
-  key[ctrl-delete]=''
-fi
+bindkey "${key[home]}"            beginning-of-line
+bindkey "${key[end]}"             end-of-line
+
+bindkey "${key[delete]}"          delete-char
+bindkey "${key[backspace]}"       backward-delete-char
+
+bindkey "${key[ctrl_right]}"      forward-word
+bindkey "${key[ctrl_left]}"       backward-word
+
+bindkey "${key[ctrl_delete]}"     backward-kill-word
+bindkey "${key[ctrl_backspace]}"  delete-word

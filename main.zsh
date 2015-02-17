@@ -3,11 +3,12 @@
 [[ -r $HOME/.profile ]] && source $HOME/.profile
 
 ZSH_LIBS_DIR=$ZDIR/libs
-ZSH_PLUGINS_DIR=$ZDIR/plugins
+ZSH_OSES_DIR=$ZDIR/os
+ZSH_EXTENSIONS_DIR=$ZDIR/extensions
 
-ZSH_PLUGINS=(
-  plg_ssh
-  plg_vim
+ZSH_EXTENSIONS=(
+  ext_ssh
+  ext_vim
 )
 
 OPT_SET=(
@@ -41,6 +42,7 @@ OPT_USET=(
 )
 
 ZSHRC_MODULES=(
+  lib_os
   lib_utils
   lib_hash
   lib_hook
@@ -52,7 +54,7 @@ ZSHRC_MODULES=(
   lib_completion
   lib_functions
   lib_aliases
-  lib_plugins
+  lib_extensions
 )
 
 ZSH_MODULES=(
@@ -73,22 +75,17 @@ fi
 
 # Check for a configuration for the current hostname.
 if [[ ! -r "$ZDIR/hosts/$HOST.zsh" ]]; then
+  ZSH_FIRST_START=true
   # If not copy the template for to a new config for the current hostname.
   cp $ZDIR/template_host.zsh $ZDIR/hosts/$HOST.zsh
+else
+  unset ZSH_FIRST_START
 fi
 
 # Apply host configuration
 source $ZDIR/hosts/$HOST.zsh
 
-if [[ `uname` == Linux ]]; then
-  ZSH_PLUGINS+=( plg_linux )
-elif [[ `uname` == *BSD ]]; then
-  ZSH_PLUGINS+=( plg_bsd )
-elif [[ `uname` == Darwin ]]; then
-  ZSH_PLUGINS+=( plg_mac )
-fi
-
-ZSH_PLUGINS+=(
+ZSH_EXTENSIONS+=(
   plg_zsh-syntax-highlighting
   plg_zsh-history-substring-search
 )

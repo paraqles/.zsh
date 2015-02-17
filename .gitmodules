@@ -1,58 +1,59 @@
-[submodule "plugins/zsh-history-substring-search"]
-  path = plugins/zsh-history-substring-search
+[submodule "extensions/zsh-history-substring-search"]
+  path = extensions/zsh-history-substring-search
   url = https://github.com/zsh-users/zsh-history-substring-search.git
 
-[submodule "plugins/arch"]
-  path = plugins/arch
+[submodule "extensions/arch"]
+  path = extensions/arch
   url = https://github.com/paraqles/zsh-plugin-arch.git
 
-[submodule "plugins/bsd"]
-  path = plugins/bsd
-  url = https://github.com/paraqles/zsh-plugin-bsd.git
-
-[submodule "plugins/git"]
-  path = plugins/git
+[submodule "extensions/git"]
+  path = extensions/git
   url = https://github.com/paraqles/zsh-plugin-git.git
 
-[submodule "plugins/linux"]
-  path = plugins/linux
-  url = https://github.com/paraqles/zsh-plugin-linux.git
-
-[submodule "plugins/mac"]
-  path = plugins/mac
-  url = https://github.com/paraqles/zsh-plugin-mac.git
-
-[submodule "plugins/mercurial"]
-  path = plugins/mercurial
+[submodule "extensions/mercurial"]
+  path = extensions/mercurial
   url = https://github.com/paraqles/zsh-plugin-mercurial.git
 
-[submodule "plugins/rails"]
-  path = plugins/rails
+[submodule "extensions/rails"]
+  path = extensions/rails
   url = https://github.com/paraqles/zsh-plugin-rails.git
 
-[submodule "plugins/ruby"]
-  path = plugins/ruby
+[submodule "extensions/ruby"]
+  path = extensions/ruby
   url = https://github.com/paraqles/zsh-plugin-ruby.git
 
-[submodule "plugins/rvm"]
-  path = plugins/rvm
+[submodule "extensions/rvm"]
+  path = extensions/rvm
   url = https://github.com/paraqles/zsh-plugin-rvm.git
 
-[submodule "plugins/ssh"]
-  path = plugins/ssh
+[submodule "extensions/ssh"]
+  path = extensions/ssh
   url = git://github.com/paraqles/zsh-plugin-ssh.git
 
-[submodule "plugins/sunos"]
-  path = plugins/sunos
-  url = https://github.com/paraqles/zsh-plugin-sunos.git
-
-[submodule "plugins/vim"]
-  path = plugins/vim
+[submodule "extensions/vim"]
+  path = extensions/vim
   url = https://github.com/paraqles/zsh-plugin-vim.git
 
-[submodule "plugins/zfs"]
-  path = plugins/zfs
+[submodule "extensions/zfs"]
+  path = extensions/zfs
   url = https://github.com/paraqles/zsh-plugin-zfs.git
-[submodule "plugins/zsh-syntax-highlighting"]
-	path = plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "extensions/zsh-syntax-highlighting"]
+  path = extensions/zsh-syntax-highlighting
+  url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+
+[submodule "os/bsd"]
+  path = os/bsd
+  url = https://github.com/paraqles/zsh-plugin-bsd.git
+
+[submodule "os/linux"]
+  path = os/linux
+  url = https://github.com/paraqles/zsh-plugin-linux.git
+
+[submodule "os/mac"]
+  path = os/mac
+  url = https://github.com/paraqles/zsh-plugin-mac.git
+
+[submodule "os/sunos"]
+  path = os/sunos
+  url = https://github.com/paraqles/zsh-plugin-sunos.git
+

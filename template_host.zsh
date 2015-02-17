@@ -1,4 +1,4 @@
-ZSH_PLUGINS+=(
+ZSH_EXTENSIONS+=(
 )
 
 OPT_SET+=(
