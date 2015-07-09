@@ -16,6 +16,8 @@ elif [[ $OSTYPE =~ ".*BSD.*" ]]; then
 
 fi
 
+source $ZSH_OS_DIR/os.zsh
+
 if [[ RE_CASE_MATCH == on ]]; then
   setopt CASE_MATCH
 fi
