@@ -39,6 +39,8 @@ OPT_SET=(
 )
 
 OPT_USET=(
+  flowcontrol
+  menu_complete
 )
 
 ZSHRC_MODULES=(
@@ -86,8 +88,8 @@ fi
 source $ZDIR/hosts/$HOST.zsh
 
 ZSH_EXTENSIONS+=(
-  plg_zsh-syntax-highlighting
-  plg_zsh-history-substring-search
+  ext_zsh-syntax-highlighting
+  ext_zsh-history-substring-search
 )
 
 for zsh_mod in $ZSH_MODULES; do

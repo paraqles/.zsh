@@ -4,11 +4,15 @@ typeset -A key
 
 source $ZSH_OS_DIR/keymapping.zsh
 
-bindkey "${key[up]}"              up-line-or-search
-bindkey "${key[down]}"            down-line-or-search
+# configure to use history substring search
+bindkey "${key[up]}"              history-substring-search-up
+bindkey "${key[down]}"            history-substring-search-down
 
-bindkey "${key[up]}"              up-line-or-history
-bindkey "${key[down]}"            down-line-or-history
+#bindkey "${key[up]}"              up-line-or-search
+#bindkey "${key[down]}"            down-line-or-search
+
+#bindkey "${key[up]}"              up-line-or-history
+#bindkey "${key[down]}"            down-line-or-history
 
 
 bindkey "${key[home]}"            beginning-of-line

@@ -8,11 +8,12 @@ done
 
 for zsh_ext in $ZSH_EXTENSIONS; do
   if [[ $zsh_ext = ext_* ]]; then
-    old_pwd=`pwd`
-    cd $ZSH_EXTENSIONS_DIR/${zsh_ext[5,-1]}
-    source aliases.zsh
-    cd $old_pwd
-
+    if [[ -f "$ZSH_EXTENSIONS_DIR/${zsh_ext[5,-1]}/aliases.zsh" ]] then
+      old_pwd=`pwd`
+      cd $ZSH_EXTENSIONS_DIR/${zsh_ext[5,-1]}
+      source aliases.zsh
+      cd $old_pwd
+    fi
   fi
   unset old_pwd
 
