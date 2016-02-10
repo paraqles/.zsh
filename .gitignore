@@ -4,3 +4,4 @@ hosts/
 hosts/*.zsh
 ._*
 .DS*
+.zdirs
