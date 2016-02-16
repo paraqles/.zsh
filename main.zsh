@@ -1,5 +1,15 @@
-[[ -r /etc/profile ]] && source /etc/profile
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 
+if [[ -d /etc/profile.d/ ]]; then
+  echo $PATH
+
+  for p in /etc/profile.d/*.sh; do
+    [[ -r "$p" ]] && source "$p"
+  done
+  unset p
+fi
+
+echo $PATH
 [[ -r $HOME/.profile ]] && source $HOME/.profile
 
 ZSH_LIBS_DIR=$ZDIR/libs
@@ -11,8 +21,8 @@ ZSH_EXTENSIONS=(
   ext_vim
 )
 
+#nohashdirs
 OPT_SET=(
-  #nohashdirs
   always_to_end
   appendhistory
   auto_cd
@@ -29,7 +39,6 @@ OPT_SET=(
   hist_verify
   hist_ignore_dups
   hist_save_no_dups
-  hist_verify
   list_packed
   list_types
   mark_dirs
@@ -44,16 +53,14 @@ OPT_USET=(
 )
 
 ZSHRC_MODULES=(
+  lib_completion
   lib_os
   lib_utils
-  lib_hash
-  lib_hook
   lib_options
   lib_prompt
   lib_history
   lib_keybinding
   lib_theme
-  lib_completion
   lib_functions
   lib_aliases
   lib_extensions
