@@ -1,15 +1,12 @@
 export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 
 if [[ -d /etc/profile.d/ ]]; then
-  echo $PATH
-
   for p in /etc/profile.d/*.sh; do
     [[ -r "$p" ]] && source "$p"
   done
   unset p
 fi
 
-echo $PATH
 [[ -r $HOME/.profile ]] && source $HOME/.profile
 
 ZSH_LIBS_DIR=$ZDIR/libs
