@@ -50,15 +50,16 @@ OPT_USET=(
 )
 
 ZSHRC_MODULES=(
+  lib_hook
   lib_completion
-  lib_os
   lib_utils
   lib_options
-  lib_prompt
   lib_history
-  lib_keybinding
-  lib_theme
   lib_functions
+  lib_os
+  lib_keybinding
+  lib_prompt
+  lib_theme
   lib_aliases
   lib_extensions
 )

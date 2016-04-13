@@ -1,5 +1,3 @@
-require lib_hash.zsh
-
 typeset -A zsh_hooks
 
 hook_add() {
