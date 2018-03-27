@@ -12,6 +12,8 @@ zstyle ':completion:*' matcher-list "m:{a-zA-Z}={A-Za-z}" "r:|[._-]=* r:|=*" "l:
 zstyle ':completion:*:descriptions' format 'Candidates for %F{blue}%d%f:'
 zstyle ':completion:*' list-seperator '#'
 
+# ignore completion functions for unkown commands
+zstyle ':completion:*:functions' ignore-patterns '_*'
 
 # should this be in keybindings?
 bindkey -M menuselect '^o' accept-and-infer-next-history
@@ -22,10 +24,17 @@ zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm 
 
 # disable named-directories autocompletion
 zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
+zstyle ':completion:*:(cd|mv|cp):*' ignore-parents parent pwd
 cdpath=(.)
 
+# completion only if at beginning or when '.'
+zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(..)'
+
+# ignore filenames already on line
+zstyle ':completion:*:(rm|kill|touch|diff|vim|gvim)' ignore-line yes
+
 # use /etc/hosts and known_hosts for hostname completion
-[ -r /etc/ssh/ssh_known_hosts ] && _global_ssh_hosts=(${${${${(f)"$(</etc/ssh/ssh_known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
+[[ -r /etc/ssh/ssh_known_hosts ]] && _global_ssh_hosts=(${${${${(f)"$(</etc/ssh/ssh_known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
 [ -r ~/.ssh/known_hosts ] && _ssh_hosts=(${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
 
 [ -r /etc/hosts ] && : ${(A)_etc_hosts:=${(s: :)${(ps:\t:)${${(f)~~"$(</etc/hosts)"}%%\#*}##[:blank:]#[^[:blank:]]#}}} || _etc_hosts=()
